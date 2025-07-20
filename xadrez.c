@@ -8,32 +8,61 @@ Bispo: Move-se na diagonal. Seu programa deverá simular o movimento do Bispo ci
 Rainha: Move-se em todas as direções. Seu programa deverá simular o movimento da Rainha oito casas para a esquerda.
 O Cavalo se move duas casas em uma direção (horizontal ou vertical) e depois uma casa perpendicularmente, formando um "L". Para este desafio, o Cavalo deverá se mover duas casas para baixo e uma casa para a esquerda.
 */
+
+//direcao: 1 - Direita ,2 - Esquerda ,3 - Cima ,4 - Baixo
+void movimento (int direcao,int casas){
+    if (casas > 0){
+        switch (direcao)
+        {
+        case 1:
+            printf("Direita \n");
+            break;
+        case 2:
+            printf("Esquerda \n");
+            break;
+        case 3:
+            printf("Cima \n");
+            break;
+        case 4:
+            printf("Baixo \n");
+            break;
+        default:
+            break;
+        }
+        movimento(direcao,casas-1);
+    } 
+}
+
 int main(){
     int torre,bispo,rainha,xcavalo,ycavalo;
     //Torre
     printf("Movimento da Torre: \n");
-    for ( torre = 0; torre < 5; torre++)
+    movimento (1,5);
+    /*for ( torre = 0; torre < 5; torre++)
     {
         printf("Direita \n");
-    }
+    }*/
     
     //Bispo
     printf("\nMovimento do Bispo: \n");
-    bispo = 0;
+    movimento (3,5);
+    movimento (1,5);
+    /*bispo = 0;
     while (bispo < 5)
     {
         printf("Cima Direita \n");
         bispo++;
-    }
+    }*/
     
     //Rainha
     printf("\nMovimento da Rainha: \n");
-    rainha = 0;
+    movimento (2,8);
+    /*rainha = 0;
     do
     {
         printf("Esquerda \n");
         rainha--;
-    } while (rainha > -8);
+    } while (rainha > -8);*/
     
     //Cavalo
     printf("\nMovimento do Cavalo: \n");
@@ -42,9 +71,9 @@ int main(){
     {
         for (ycavalo = 0; ycavalo > -2; ycavalo--)
         {
-            printf("Baixo \n");
+            printf("Cima \n");
         }
-        printf("Esquerda \n");
+        printf("Direita \n");
         xcavalo--;
     } while (xcavalo > -1);
     
