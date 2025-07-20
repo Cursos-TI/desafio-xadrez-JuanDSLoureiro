@@ -6,9 +6,10 @@ Você deverá criar um único programa em C que simule o movimento de três peç
 Torre: Move-se em linha reta horizontalmente ou verticalmente. Seu programa deverá simular o movimento da Torre cinco casas para a direita.
 Bispo: Move-se na diagonal. Seu programa deverá simular o movimento do Bispo cinco casas na diagonal para cima e à direita. Para representar a diagonal, você imprimirá a combinação de duas direções a cada casa (ex: "Cima, Direita").
 Rainha: Move-se em todas as direções. Seu programa deverá simular o movimento da Rainha oito casas para a esquerda.
+O Cavalo se move duas casas em uma direção (horizontal ou vertical) e depois uma casa perpendicularmente, formando um "L". Para este desafio, o Cavalo deverá se mover duas casas para baixo e uma casa para a esquerda.
 */
 int main(){
-    int torre,bispo,rainha;
+    int torre,bispo,rainha,xcavalo,ycavalo;
     //Torre
     printf("Movimento da Torre: \n");
     for ( torre = 0; torre < 5; torre++)
@@ -34,4 +35,18 @@ int main(){
         rainha--;
     } while (rainha > -8);
     
+    //Cavalo
+    printf("\nMovimento do Cavalo: \n");
+    xcavalo = 0;
+    do
+    {
+        for (ycavalo = 0; ycavalo > -2; ycavalo--)
+        {
+            printf("Baixo \n");
+        }
+        printf("Esquerda \n");
+        xcavalo--;
+    } while (xcavalo > -1);
+    
+
 }
